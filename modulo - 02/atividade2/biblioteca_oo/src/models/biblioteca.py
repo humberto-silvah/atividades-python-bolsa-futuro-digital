@@ -1,9 +1,10 @@
 from models.livro import Livro
 from models.usuario import Usuario
 from abc import abstractmethod
+divisao = "=" * 45 # Cabeçalho
 
 class Biblioteca:
-
+    
     def __init__(self):
         self._livros = []
         self._usuarios = []
@@ -16,8 +17,15 @@ class Biblioteca:
         return self._usuarios
 
     def cadastrar_livro(self):
-        print("=== Cadastro de Livros ===")
-        titulo = input("Titulo do livro: ")
+
+        # Cabeçalho
+        print() 
+        print(divisao)
+        print("|            Cadastro de Livro              |")
+        print(divisao) 
+        # Cabeçalho
+
+        titulo = input("\nTitulo do livro: ")
         autor = input("Autor do livro: ")
         ano = input("Ano de publicação: ")
         novo_livro = Livro(titulo, autor, ano)
@@ -28,7 +36,14 @@ class Biblioteca:
         if not self.livros:
             print("Nenhum livro cadastrado na biblioteca.")
             return
-        print("=== Lista de Livros ===")
+        # Cabeçalho
+        print()
+        print(divisao)
+        print("|             Lista de Livros               |")
+        print(divisao)
+        print()
+        # Cabeçalho 
+
         for idx, livro in enumerate(self.livros, start=1):
             status = "Disponivel" if livro.disponivel else "Indisponivel"
-            print(f"{idx}. {livro.titulo} - {livro.autor} ({livro.ano}) - {status}")
+            print(f"{idx}. Titulo:{livro.titulo} - Auutor:{livro.autor} Ano:{livro.ano} - {status}")

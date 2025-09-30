@@ -1,4 +1,5 @@
 class Usuario:
+    
     def __init__(self, nome, id):
         self._nome = nome
         self._id = id

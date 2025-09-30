@@ -17,7 +17,7 @@ class Biblioteca:
 
     def cadastrar_livro(self):
         print("=== Cadastro de Livros ===")
-        titulo = input("Título do livro: ")
+        titulo = input("Titulo do livro: ")
         autor = input("Autor do livro: ")
         ano = input("Ano de publicação: ")
         novo_livro = Livro(titulo, autor, ano)
@@ -30,5 +30,5 @@ class Biblioteca:
             return
         print("=== Lista de Livros ===")
         for idx, livro in enumerate(self.livros, start=1):
-            status = "Disponível" if livro.disponivel else "Indisponível"
+            status = "Disponivel" if livro.disponivel else "Indisponivel"
             print(f"{idx}. {livro.titulo} - {livro.autor} ({livro.ano}) - {status}")

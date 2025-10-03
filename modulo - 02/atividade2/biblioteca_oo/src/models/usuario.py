@@ -16,3 +16,5 @@ class Usuario:
     def livros_emprestados(self):
         return self._livros_emprestados
     
+    
+    

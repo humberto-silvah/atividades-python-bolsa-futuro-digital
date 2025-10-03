@@ -1,41 +1,35 @@
 from models.biblioteca import Biblioteca
-divisao = "=" * 45
-divisao2 = "-" * 25
+from utils.formatadores import Formatadores
+cabecalho = Formatadores.cabecalho
+divisao = "-" * 25
 
 def main():
     biblioteca = Biblioteca()   
-    print(divisao)
-    print("|       Biblioteca BDF Aluno Humberto       |")
-    print(divisao)
+    cabecalho("Biblioteca BFD Aluno Humberto")
 
     while True:
-        print("\n:---------- Menu ---------:") # Cabeçalho
-
-        print("1. Cadastrar Livro")
-        print("2. Listar Livros")
-        print("3. Cadastrar Usuario")       
-        print("4. Listar Usuarios")
-        print("5. Emprestar Livro")
-        print("6. Devolver Livro")
-        print("7. Sair")
-        
-        print(f":{divisao2}:") # Cabeçalho
+        Formatadores.cabechalho_menu()
+        #1. Cadastrar Livro
+        #2. Listar Livros
+        #3. Cadastrar Usuario
+        #4. Listar Usuarios
+        #5. Emprestar Livro
+        #6. Devolver Livro
+        #7. Sair
 
         escolha = input("\nEscolha uma opção: ")
         match escolha:
             case "7":
-                print(divisao)
-                print("|            Sistema Encerrado              |")
-                print(divisao)
+                cabecalho("Sistema Encerrado")
                 break
             case "1":
                 biblioteca.cadastrar_livro()
             case "2":
                 biblioteca.listar_livros()
             case "3":
-                print("Funcao desabilitada no momento.")
+                biblioteca.cadastrar_usuario()
             case "4":
-                print("Funcao desabilitada no momento.")
+                biblioteca.listar_usuarios()
             case "5":
                 print("Funcao desabilitada no momento.")
             case "6":

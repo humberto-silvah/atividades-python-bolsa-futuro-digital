@@ -6,16 +6,29 @@ def main():
     biblioteca = Biblioteca()   
     Formatadores.cabecalho("Biblioteca BFD Aluno Humberto")
 
+    Formatadores.cabecalho("cadastro livros")
     biblioteca.cadastrar_livro("aaaa", "b", 1949)
     biblioteca.cadastrar_livro("cccc", "d", 1960)
+    Formatadores.cabecalho("cad usuarios")
     biblioteca.cadastrar_usuario("Alice", "1")
     biblioteca.cadastrar_usuario("Bob", "2")
+    Formatadores.cabecalho("lisvros dispo")
     biblioteca.listar_livros_disponiveis()
+    Formatadores.cabecalho("lista usuarios")
     biblioteca.listar_usuarios()
-    biblioteca.emprestar_livro("1", "aaaa")
+    Formatadores.cabecalho("empestimo")
+    biblioteca.emprestar_livro("2", "aaaa")
+    Formatadores.cabecalho("todos livros")
+    biblioteca.listar_todos_livros()
+    
+    
+    Formatadores.cabecalho("livros dispo")
     biblioteca.listar_livros_disponiveis()
+    Formatadores.cabecalho("lista usuarios")
     biblioteca.listar_usuarios()
    
+    
+
 
     """
     while True:

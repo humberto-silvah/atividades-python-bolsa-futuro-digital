@@ -19,3 +19,5 @@ class Usuario:
     def adicionar_livro(self, livro):
         self._livros_emprestados.append(livro)
    
+    def remover_livro(self, livro):
+        self._livros_emprestados.remove(livro)

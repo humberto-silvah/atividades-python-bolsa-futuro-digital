@@ -23,9 +23,8 @@ class Livro:
     def disponivel(self, valor):
         self._livro_disponivel = valor
 
-    def __str__(self):
-        status = "Disponivel" if self.disponivel else "Indisponivel"
-        return f"{self.titulo} - {self.autor} ({self.ano}) - {status}"
+    
+
     
 
    

@@ -4,7 +4,7 @@ class Livro:
         self._titulo = titulo
         self._autor = autor
         self._ano = ano
-        self._disponivel = True
+        self._livro_disponivel = True
 
     @property
     def titulo(self):
@@ -17,11 +17,11 @@ class Livro:
         return self._ano
     @property
     def disponivel(self):
-        return self._disponivel
-    
+        return self._livro_disponivel
+
     @disponivel.setter
     def disponivel(self, valor):
-        self._disponivel = valor
+        self._livro_disponivel = valor
 
     def __str__(self):
         status = "Disponivel" if self.disponivel else "Indisponivel"

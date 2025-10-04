@@ -1,48 +1,75 @@
 from models.biblioteca import Biblioteca
 from utils.formatadores import Formatadores
-cabecalho = Formatadores.cabecalho
-divisao = "-" * 25
+
 
 def main():
     biblioteca = Biblioteca()   
-    cabecalho("Biblioteca BFD Aluno Humberto")
+    Formatadores.cabecalho("Biblioteca BFD Aluno Humberto")
 
+    biblioteca.cadastrar_livro("aaaa", "b", 1949)
+    biblioteca.cadastrar_livro("cccc", "d", 1960)
+    biblioteca.cadastrar_usuario("Alice", "1")
+    biblioteca.cadastrar_usuario("Bob", "2")
+    biblioteca.listar_livros_disponiveis()
+    biblioteca.listar_usuarios()
+    biblioteca.emprestar_livro("1", "aaaa")
+    biblioteca.listar_livros_disponiveis()
+    biblioteca.listar_usuarios()
+   
+
+    """
     while True:
-        Formatadores.cabechalho_menu()
-        #1. Cadastrar Livro
-        #2. Listar Livros
-        #3. Cadastrar Usuario
-        #4. Listar Usuarios
-        #5. Emprestar Livro
-        #6. Devolver Livro
-        #7. Sair
+        Formatadores.cabecalho_menu()
+        #1- Cadastrar Livro
+        #2- Cadastrar Usuario
+        #3- Emprestar Livro
+        #4- Devolver Livro
+        #5- Listar livros disponíveis
+        #6- Listar livros emprestados
+        #7- Listar usuários e seus livros
+        #8- Sair
 
         escolha = input("\nEscolha uma opção: ")
         match escolha:
             case "7":
-                cabecalho("Sistema Encerrado")
+                Formatadores.cabecalho("Sistema Encerrado")
                 break
+
             case "1":
-                biblioteca.cadastrar_livro()
+                Formatadores.cabecalho("Cadastro de Livro") 
+                titulo = input("\nTítulo do livro: ")
+                autor = input("Autor do livro: ")
+                ano = input("Ano de publicação: ")
+                biblioteca.cadastrar_livro(titulo, autor, ano)
+
             case "2":
-                biblioteca.listar_livros()
+                Formatadores.cabecalho("Cadastro de Usuario")
+                nome = input("\nNome do usuario: ")
+                id = input("ID do usuário: ")
+                biblioteca.cadastrar_usuario(nome, id)
+
             case "3":
-                biblioteca.cadastrar_usuario()
+                Formatadores.cabecalho("Empréstimo de Livro")
+                usuario_id = input("\nID do usuário: ")
+                titulo_livro = input("Título do livro: ")
+                biblioteca.emprestar_livro(usuario_id, titulo_livro)
+
             case "4":
-                biblioteca.listar_usuarios()
+                Formatadores.cabecalho("Devolução de Livro")
+                print("Funcao desabilitada no momento.")
+
             case "5":
-                print("Funcao desabilitada no momento.")
+                Formatadores.cabecalho("Lista de Livros Disponíveis")
+                biblioteca.listar_livros_disponiveis()
+
             case "6":
+                Formatadores.cabecalho("Lista de Livros Emprestados")
                 print("Funcao desabilitada no momento.")
+            
             case _:
-                print("Opcao invalida. Tente novamente.")
+                print("Opcao invalida. Tente novamente.")"""
                 
             
-
-    
-    
-    
-
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
 class Usuario:
-    
+
     def __init__(self, nome, id):
         self._nome = nome
         self._id = id
@@ -16,5 +16,6 @@ class Usuario:
     def livros_emprestados(self):
         return self._livros_emprestados
     
-    
-    
+    def adicionar_livro(self, livro):
+        self._livros_emprestados.append(livro)
+   

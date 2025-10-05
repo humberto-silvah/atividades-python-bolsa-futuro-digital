@@ -1,23 +1,27 @@
-class Formatadores:
-    divisao = "=" * 45
-    divisao_menu = "-" * 25
+class Menu:
+
+    
+    divisao = "=" * 60
+    divisao_menu = "-" * 40
 
 
     def cabecalho(string):
-        print(f"\n{Formatadores.divisao}")
-        print(f"|{string:^43}|")
-        print(f"{Formatadores.divisao}")
+        print(f"\n{Menu.divisao}")
+        print(f"|{string.upper():^58}|")
+        print(f"{Menu.divisao}\n")
         return
 
+
     def cabecalho_menu():
-        print(f"\n:{'Menu:':-^25}:") # Cabeçalho
+        print(f"\n:{'Menu:':-^40}:") # Cabeçalho
         print("1- Cadastrar Livro")
         print("2- Cadastrar Usuario")
-        print("3- Emprestar Livro")       
-        print("4- Devolver Livro")
-        print("5- Listar livros disponíveis")
-        print("6- Listar livros emprestados")
-        print("7- Listar usuários e seus livros")
-        print("8- Sair")
-        print(f":{Formatadores.divisao_menu}:") # Cabeçalho
+        print("3- Lista Tados os livros")
+        print("4- Emprestar Livro")       
+        print("5- Devolver Livro")
+        print("6- Listar livros disponíveis")
+        print("7- Listar livros emprestados")
+        print("8- Listar usuários e seus livros")
+        print("9- Sair")
+        print(f":{Menu.divisao_menu}:") # Cabeçalho
         return
